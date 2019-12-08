@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+  magicmirror:
+    container_name: magicmirror
+    image: docker-magicmirror:latest
+    ports:
+      - 8080:8080
+    volumes:
+      - ~/docker/volumes/MagicMirror/config:/opt/magic_mirror/config
+      - ~/docker/volumes/MagicMirror/modules:/opt/magic_mirror/modules
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - TZ=Europe/Zurich
+    restart: unless-stopped
+    network_mode: host
