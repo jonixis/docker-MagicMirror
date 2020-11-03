@@ -9,13 +9,6 @@ if [ ! "$(ls -A /opt/magic_mirror/config)" ]; then
     cp /opt/magic_mirror/mm-docker-config.js /opt/magic_mirror/config/config.js
 fi
 
-for dir in /opt/magic_mirror/modules/MMM-*/
-do
-    if [ -d "$dir" ]; then
-        node --version
-        (cd "$dir" &&
-             npm install)
-    fi
-done
+./install-modules.sh
 
 exec "$@"

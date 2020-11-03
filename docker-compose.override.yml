@@ -4,4 +4,4 @@ services:
   magicmirror:
     ports:
       - 9229:9229
-    command: node --inspect-brk=0.0.0.0 serveronly
+    command: node --inspect=0.0.0.0 serveronly

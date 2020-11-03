@@ -12,8 +12,9 @@ RUN npm install --unsafe-perm --silent
 
 RUN apt-get -qy install arp-scan iputils-ping sudo
 
-COPY mm-docker-config.js docker-entrypoint.sh ./
+COPY mm-docker-config.js docker-entrypoint.sh install-modules.sh ./
 RUN chmod +x ./docker-entrypoint.sh
+RUN chmod +x ./install-modules.sh
 
 EXPOSE 8080
 ENTRYPOINT ["./docker-entrypoint.sh"]
