@@ -1,0 +1,7 @@
+version: '3.5'
+
+services:
+  magicmirror:
+    ports:
+      - 9229:9229
+    command: node --inspect-brk=0.0.0.0 serveronly
